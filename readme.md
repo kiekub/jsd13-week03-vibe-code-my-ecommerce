@@ -1,0 +1,1 @@
+ใช้ database จาก /Users/newkie/Desktop/jsd13/week-02/first-meet-dbs/03_my-ecommerce-project มาใช้ทำ backend ในไฟล์ api ส่วน front end ทำในไฟล์ web โดยให้ ai ช่วย vibe code ทำเว็บ e-commerce เพื่อใช้งานจริง
