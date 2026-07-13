@@ -30,6 +30,9 @@
 ## 3. Describe your ecommerce business idea including core features
 // Business idea:
   Sleep Routine Service — แพลตฟอร์มเช่า Host เพื่อช่วยสร้างวินัยการนอนและการตื่นนอน โดยมีคนจริงคอยช่วยให้ทำสิ่งที่ตั้งใจ ซึ่ง AI หรือนาฬิกาปลุกยังทดแทนได้ไม่หมด
+
+    Business Name:  Sleep Better. Live Better.
+    Slogan: Find your perfect sleep coach and build healthier sleep habits.
    
    Core Features:
    👤 User
