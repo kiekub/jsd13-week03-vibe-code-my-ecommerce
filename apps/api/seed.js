@@ -1,5 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const User = require('./models/User');
 const Plan = require('./models/Plan');
@@ -9,16 +10,16 @@ const Session = require('./models/Session');
 const Review = require('./models/Review');
 
 const users = [
-  { name: 'namtan', email: 'namtan@example.com', password: 'namtan0101', bedtime: '22:00', waketime: '07:00' },
-  { name: 'love', email: 'love@example.com', password: 'love0102', bedtime: '23:00', waketime: '08:00' },
-  { name: 'earnearn', email: 'earnearn@example.com', password: 'earnearn0103', bedtime: '21:00', waketime: '06:00' },
-  { name: 'emi', email: 'emi@example.com', password: 'emi0104', bedtime: '23:30', waketime: '06:30' },
-  { name: 'view', email: 'view@example.com', password: 'view0105', bedtime: '22:30', waketime: '06:00' },
-  { name: 'nicky', email: 'nicky@example.com', password: 'nicky0106', bedtime: '00:00', waketime: '07:30' },
-  { name: 'dear', email: 'dear@example.com', password: 'dear0107', bedtime: '21:30', waketime: '05:30' },
-  { name: 'sita', email: 'sita@example.com', password: 'sita0108', bedtime: '23:30', waketime: '08:30' },
-  { name: 'karina', email: 'karina@example.com', password: 'karina0109', bedtime: '22:00', waketime: '06:00' },
-  { name: 'ningning', email: 'ningning@example.com', password: 'ningning0110', bedtime: '00:30', waketime: '08:00' },
+  { name: 'namtan', email: 'namtan@example.com', password: 'namtan0101', role: 'admin', bedtime: '22:00', waketime: '07:00' },
+  { name: 'love', email: 'love@example.com', password: 'love0102', role: 'user', bedtime: '23:00', waketime: '08:00' },
+  { name: 'earnearn', email: 'earnearn@example.com', password: 'earnearn0103', role: 'user', bedtime: '21:00', waketime: '06:00' },
+  { name: 'emi', email: 'emi@example.com', password: 'emi0104', role: 'user', bedtime: '23:30', waketime: '06:30' },
+  { name: 'view', email: 'view@example.com', password: 'view0105', role: 'user', bedtime: '22:30', waketime: '06:00' },
+  { name: 'nicky', email: 'nicky@example.com', password: 'nicky0106', role: 'user', bedtime: '00:00', waketime: '07:30' },
+  { name: 'dear', email: 'dear@example.com', password: 'dear0107', role: 'user', bedtime: '21:30', waketime: '05:30' },
+  { name: 'sita', email: 'sita@example.com', password: 'sita0108', role: 'user', bedtime: '23:30', waketime: '08:30' },
+  { name: 'karina', email: 'karina@example.com', password: 'karina0109', role: 'user', bedtime: '22:00', waketime: '06:00' },
+  { name: 'ningning', email: 'ningning@example.com', password: 'ningning0110', role: 'user', bedtime: '00:30', waketime: '08:00' },
 ];
 
 const plans = [
@@ -53,7 +54,14 @@ async function seed() {
     await Review.deleteMany({});
     console.log('Cleared existing data');
 
-    const savedUsers = await User.insertMany(users);
+    const hashedUsers = await Promise.all(
+      users.map(async (u) => ({
+        ...u,
+        password: await bcrypt.hash(u.password, 10)
+      }))
+    );
+
+    const savedUsers = await User.insertMany(hashedUsers);
     const savedPlans = await Plan.insertMany(plans);
     const savedHosts = await Host.insertMany(hosts);
     console.log(`Inserted ${savedUsers.length} users, ${savedPlans.length} plans, ${savedHosts.length} hosts`);

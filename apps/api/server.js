@@ -14,13 +14,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.json({ message: 'API is running', endpoints: ['/api/users', '/api/plans', '/api/hosts', '/api/bookings', '/api/sessions', '/api/reviews'] });
+  res.json({ message: 'API is running', endpoints: ['/api/auth', '/api/users', '/api/plans', '/api/hosts', '/api/bookings', '/api/sessions', '/api/reviews'] });
 });
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to chrome-sleep-db');
 
+    const authRoutes = require('./routes/auth');
     const userRoutes = require('./routes/users');
     const planRoutes = require('./routes/plans');
     const hostRoutes = require('./routes/hosts');
@@ -28,6 +29,7 @@ mongoose.connect(process.env.MONGODB_URI)
     const sessionRoutes = require('./routes/sessions');
     const reviewRoutes = require('./routes/reviews');
 
+    app.use('/api/auth', authRoutes);
     app.use('/api/users', userRoutes);
     app.use('/api/plans', planRoutes);
     app.use('/api/hosts', hostRoutes);

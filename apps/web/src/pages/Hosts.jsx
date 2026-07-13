@@ -1,44 +1,35 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import HostCard from '../components/HostCard';
+import { mockHosts } from '../mock/mockData';
 
 function Hosts() {
-  const [hosts, setHosts] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    axios.get('/api/hosts')
-      .then(res => {
-        setHosts(res.data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error(err)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) return <p>กำลังโหลด...</p>
+  const activeHosts = mockHosts.filter(h => h.host_status === 'active');
+  const busyHosts = mockHosts.filter(h => h.host_status === 'busy');
 
   return (
     <div>
       <h1 className="page-title">โฮสต์ของเรา</h1>
-      <div className="card-grid">
-        {hosts.map(host => (
-          <div key={host._id} className="card">
-            <h3>{host.name}</h3>
-            <p>บุคลิก: {host.personality}</p>
-            <p>เพศ: {host.gender}</p>
-            <p className="rating">⭐ {host.rating}</p>
-            <div className="host-status">
-              <span className={`badge badge-${host.host_status}`}>
-                {host.host_status === 'active' ? 'ว่าง' : 'ไม่ว่าง'}
-              </span>
-            </div>
+
+      <section className="section">
+        <h2 className="section-title">โฮสต์ว่าง</h2>
+        <div className="card-grid">
+          {activeHosts.map(host => (
+            <HostCard key={host._id} host={host} />
+          ))}
+        </div>
+      </section>
+
+      {busyHosts.length > 0 && (
+        <section className="section">
+          <h2 className="section-title">โฮสต์ไม่ว่าง</h2>
+          <div className="card-grid">
+            {busyHosts.map(host => (
+              <HostCard key={host._id} host={host} />
+            ))}
           </div>
-        ))}
-      </div>
+        </section>
+      )}
     </div>
-  )
+  );
 }
 
-export default Hosts
+export default Hosts;
