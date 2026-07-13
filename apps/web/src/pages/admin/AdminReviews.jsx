@@ -8,7 +8,7 @@ export default function AdminReviews() {
 
   const columns = [
     { header: 'Payment ID', render: (row) => row.booking_id?.payment?.payment_id || 'N/A' },
-    { header: 'คะแนน', render: (row) => '⭐'.repeat(row.rating) },
+    { header: 'คะแนน', render: (row) => '★'.repeat(row.rating) },
     { header: 'ความคิดเห็น', key: 'comment' },
   ];
 

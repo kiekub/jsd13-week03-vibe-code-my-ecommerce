@@ -22,12 +22,12 @@ export default function AdminDashboard() {
       <h1 className="page-title">แดชบอร์ดแอดมิน</h1>
 
       <div className="stats-grid">
-        <StatCard number={mockUsers.length} label="ผู้ใช้ทั้งหมด" icon="👤" />
-        <StatCard number={mockHosts.length} label="โฮสต์ทั้งหมด" icon="🧑‍💼" />
-        <StatCard number={activeBookings.length} label="การจองที่ใช้งาน" icon="📋" />
-        <StatCard number={mockSessions.length} label="เซสชันทั้งหมด" icon="😴" />
-        <StatCard number={mockReviews.length} label="รีวิวทั้งหมด" icon="⭐" />
-        <StatCard number={mockPlans.length} label="แพ็กเกจ" icon="📦" />
+        <StatCard number={mockUsers.length} label="ผู้ใช้ทั้งหมด" icon="◎" />
+        <StatCard number={mockHosts.length} label="โฮสต์ทั้งหมด" icon="✦" />
+        <StatCard number={activeBookings.length} label="การจองที่ใช้งาน" icon="◇" />
+        <StatCard number={mockSessions.length} label="เซสชันทั้งหมด" icon="☽" />
+        <StatCard number={mockReviews.length} label="รีวิวทั้งหมด" icon="★" />
+        <StatCard number={mockPlans.length} label="แพ็กเกจ" icon="○" />
       </div>
 
       <div className="dashboard-grid">

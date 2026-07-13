@@ -12,7 +12,7 @@ export default function HostReviews() {
       <h1 className="page-title">รีวิวที่ได้รับ</h1>
       {hostReviews.length === 0 ? (
         <div className="empty-state">
-          <span className="empty-icon">⭐</span>
+          <span className="empty-icon">★</span>
           <p>ยังไม่มีรีวิว</p>
         </div>
       ) : (

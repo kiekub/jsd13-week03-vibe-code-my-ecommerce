@@ -10,7 +10,7 @@ function HostDetail() {
   if (!host) {
     return (
       <div className="empty-state">
-        <span className="empty-icon">👤</span>
+        <span className="empty-icon">✦</span>
         <p>ไม่พบโฮสต์</p>
         <Link to="/hosts" className="btn btn-primary btn-sm">กลับไปหน้าโฮสต์</Link>
       </div>
@@ -24,13 +24,15 @@ function HostDetail() {
       <div className="host-detail">
         <div className="host-detail-info">
           <div className="host-card-avatar">
-            <span className="host-avatar-icon">👤</span>
+            <span className="host-avatar-icon">
+              {host.gender === 'เคะ' ? '✦' : '❋'}
+            </span>
           </div>
           <h1>{host.name}</h1>
           <div className="host-meta">
             <Badge status={host.host_status} />
             <span className="host-card-gender">{host.gender}</span>
-            <span className="host-card-rating">⭐ {host.rating}</span>
+            <span className="host-card-rating">★ {host.rating}</span>
           </div>
           <div className="host-detail-fields">
             <p><strong>บุคลิก:</strong> {host.personality}</p>

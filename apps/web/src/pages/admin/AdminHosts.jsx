@@ -11,7 +11,7 @@ export default function AdminHosts() {
     { header: 'ชื่อ', key: 'name' },
     { header: 'เพศ', key: 'gender' },
     { header: 'บุคลิก', key: 'personality' },
-    { header: 'คะแนน', render: (row) => `⭐ ${row.rating}` },
+    { header: 'คะแนน', render: (row) => `★ ${row.rating}` },
     { header: 'สถานะ', render: (row) => <Badge status={row.host_status} /> },
   ];
 

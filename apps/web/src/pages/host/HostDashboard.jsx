@@ -23,13 +23,13 @@ export default function HostDashboard() {
 
   return (
     <div>
-      <h1 className="page-title">สวัสดี, {user.name} 👋</h1>
+      <h1 className="page-title">สวัสดี, {user.name}</h1>
 
       <div className="stats-grid">
-        <StatCard number={hostBookings.length} label="การจองทั้งหมด" icon="📋" />
-        <StatCard number={hostSessions.length} label="เซสชันทั้งหมด" icon="😴" />
-        <StatCard number={avgRating} label="คะแนนเฉลี่ย" icon="⭐" />
-        <StatCard number={hostReviews.length} label="รีวิวทั้งหมด" icon="💬" />
+        <StatCard number={hostBookings.length} label="การจองทั้งหมด" icon="◎" />
+        <StatCard number={hostSessions.length} label="เซสชันทั้งหมด" icon="☽" />
+        <StatCard number={avgRating} label="คะแนนเฉลี่ย" icon="★" />
+        <StatCard number={hostReviews.length} label="รีวิวทั้งหมด" icon="✦" />
       </div>
 
       <div className="dashboard-grid">
@@ -37,7 +37,7 @@ export default function HostDashboard() {
           <h2 className="section-title">การจองที่กำลังดำเนินอยู่</h2>
           {upcomingBookings.length === 0 ? (
             <div className="empty-state">
-              <span className="empty-icon">📋</span>
+              <span className="empty-icon">◎</span>
               <p>ยังไม่มีการจอง</p>
             </div>
           ) : (
@@ -58,7 +58,7 @@ export default function HostDashboard() {
           <h2 className="section-title">เซสชันที่กำลังจะถึง</h2>
           {upcomingSessions.length === 0 ? (
             <div className="empty-state">
-              <span className="empty-icon">😴</span>
+              <span className="empty-icon">☽</span>
               <p>ยังไม่มีเซสชันที่กำลังจะถึง</p>
             </div>
           ) : (

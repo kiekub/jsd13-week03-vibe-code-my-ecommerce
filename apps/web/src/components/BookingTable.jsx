@@ -4,7 +4,7 @@ export default function BookingTable({ bookings, showUser = false, showHost = fa
   if (!bookings || bookings.length === 0) {
     return (
       <div className="empty-state">
-        <span className="empty-icon">📋</span>
+        <span className="empty-icon">◎</span>
         <p>ไม่มีการจอง</p>
       </div>
     );

@@ -2,29 +2,29 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 const userLinks = [
-  { to: '/dashboard', label: 'แดชบอร์ด', icon: '📊' },
-  { to: '/dashboard/bookings', label: 'การจองของฉัน', icon: '📋' },
-  { to: '/dashboard/sessions', label: 'เซสชันของฉัน', icon: '😴' },
-  { to: '/dashboard/profile', label: 'โปรไฟล์', icon: '⚙️' },
+  { to: '/dashboard', label: 'แดชบอร์ด', icon: '◈' },
+  { to: '/dashboard/bookings', label: 'การจองของฉัน', icon: '◎' },
+  { to: '/dashboard/sessions', label: 'เซสชันของฉัน', icon: '☽' },
+  { to: '/dashboard/profile', label: 'โปรไฟล์', icon: '◇' },
 ];
 
 const hostLinks = [
-  { to: '/host/dashboard', label: 'แดชบอร์ด', icon: '📊' },
-  { to: '/host/plans', label: 'แพ็กเกจของฉัน', icon: '📦' },
-  { to: '/host/bookings', label: 'การจองที่เข้ามา', icon: '📋' },
-  { to: '/host/sessions', label: 'เซสชันที่กำลังจะถึง', icon: '😴' },
-  { to: '/host/reviews', label: 'รีวิว', icon: '⭐' },
-  { to: '/host/profile', label: 'โปรไฟล์', icon: '⚙️' },
+  { to: '/host/dashboard', label: 'แดชบอร์ด', icon: '◈' },
+  { to: '/host/plans', label: 'แพ็กเกจของฉัน', icon: '◎' },
+  { to: '/host/bookings', label: 'การจองที่เข้ามา', icon: '☽' },
+  { to: '/host/sessions', label: 'เซสชันที่กำลังจะถึง', icon: '✦' },
+  { to: '/host/reviews', label: 'รีวิว', icon: '★' },
+  { to: '/host/profile', label: 'โปรไฟล์', icon: '◇' },
 ];
 
 const adminLinks = [
-  { to: '/admin/dashboard', label: 'แดชบอร์ด', icon: '📊' },
-  { to: '/admin/users', label: 'ผู้ใช้', icon: '👤' },
-  { to: '/admin/hosts', label: 'โฮสต์', icon: '🧑‍💼' },
-  { to: '/admin/plans', label: 'แพ็กเกจ', icon: '📦' },
-  { to: '/admin/bookings', label: 'การจอง', icon: '📋' },
-  { to: '/admin/sessions', label: 'เซสชัน', icon: '😴' },
-  { to: '/admin/reviews', label: 'รีวิว', icon: '⭐' },
+  { to: '/admin/dashboard', label: 'แดชบอร์ด', icon: '◈' },
+  { to: '/admin/users', label: 'ผู้ใช้', icon: '◎' },
+  { to: '/admin/hosts', label: 'โฮสต์', icon: '✦' },
+  { to: '/admin/plans', label: 'แพ็กเกจ', icon: '☽' },
+  { to: '/admin/bookings', label: 'การจอง', icon: '◇' },
+  { to: '/admin/sessions', label: 'เซสชัน', icon: '○' },
+  { to: '/admin/reviews', label: 'รีวิว', icon: '★' },
 ];
 
 export default function Sidebar() {

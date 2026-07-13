@@ -1,6 +1,6 @@
 export default function DataTable({ columns, data, onDelete, emptyMessage = 'ไม่มีข้อมูล' }) {
   if (!data || data.length === 0) {
-    return <div className="empty-state"><p>{emptyMessage}</p></div>;
+    return <div className="empty-state"><span className="empty-icon">○</span><p>{emptyMessage}</p></div>;
   }
 
   return (

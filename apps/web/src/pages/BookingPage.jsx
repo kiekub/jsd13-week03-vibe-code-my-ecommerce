@@ -28,7 +28,7 @@ function BookingPage() {
   if (isSubmitted) {
     return (
       <div className="booking-success">
-        <h1>✅ การจองสำเร็จ!</h1>
+        <h1>✦ การจองสำเร็จ!</h1>
         <p>ชำระเงินเรียบร้อยแล้ว</p>
         <p>โฮสต์จะติดต่อกลับภายใน 24 ชั่วโมง</p>
         <Link to="/" className="btn btn-primary">กลับหน้าแรก</Link>
@@ -39,7 +39,7 @@ function BookingPage() {
   if (!host || !plan) {
     return (
       <div className="empty-state">
-        <span className="empty-icon">📋</span>
+        <span className="empty-icon">◎</span>
         <p>กรุณาเลือกโฮสต์และแพ็กเกจก่อนทำการจอง</p>
         <Link to="/hosts" className="btn btn-primary btn-sm">เลือกโฮสต์</Link>
       </div>

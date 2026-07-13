@@ -4,7 +4,7 @@ export default function SessionTable({ sessions }) {
   if (!sessions || sessions.length === 0) {
     return (
       <div className="empty-state">
-        <span className="empty-icon">😴</span>
+        <span className="empty-icon">☽</span>
         <p>ไม่มีเซสชัน</p>
       </div>
     );

@@ -52,7 +52,7 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <Link to="/" className="navbar-brand">🌙 Sleep Routine</Link>
+      <Link to="/" className="navbar-brand">Sleep Routine</Link>
       <nav>
         {navLinks.map(link => (
           <Link key={link.to} to={link.to}>{link.label}</Link>

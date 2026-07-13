@@ -19,12 +19,12 @@ export default function UserDashboard() {
 
   return (
     <div>
-      <h1 className="page-title">สวัสดี, {user.name} 👋</h1>
+      <h1 className="page-title">สวัสดี, {user.name}</h1>
 
       <div className="stats-grid">
-        <StatCard number={userBookings.length} label="การจองทั้งหมด" icon="📋" />
-        <StatCard number={userSessions.length} label="เซสชันทั้งหมด" icon="😴" />
-        <StatCard number={onTimeCount} label="เข้านอนตรงเวลา" icon="✅" />
+        <StatCard number={userBookings.length} label="การจองทั้งหมด" icon="◎" />
+        <StatCard number={userSessions.length} label="เซสชันทั้งหมด" icon="☽" />
+        <StatCard number={onTimeCount} label="เข้านอนตรงเวลา" icon="✦" />
       </div>
 
       <div className="dashboard-grid">
@@ -32,7 +32,7 @@ export default function UserDashboard() {
           <h2 className="section-title">การจองที่กำลังดำเนินอยู่</h2>
           {upcomingBookings.length === 0 ? (
             <div className="empty-state">
-              <span className="empty-icon">📋</span>
+              <span className="empty-icon">◎</span>
               <p>ยังไม่มีการจอง</p>
               <Link to="/hosts" className="btn btn-primary btn-sm">เลือกโฮสต์</Link>
             </div>
@@ -55,7 +55,7 @@ export default function UserDashboard() {
           <h2 className="section-title">เซสชันล่าสุด</h2>
           {recentSessions.length === 0 ? (
             <div className="empty-state">
-              <span className="empty-icon">😴</span>
+              <span className="empty-icon">☽</span>
               <p>ยังไม่มีเซสชัน</p>
             </div>
           ) : (

@@ -5,8 +5,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-          <h3>🌙 Sleep Routine</h3>
-          <p>บริการโฮสต์ส่วนตัวที่ช่วยดูแลการนอนของคุณ</p>
+          <h3>Sleep Routine</h3>
+          <p>บริการโฮสต์ส่วนตัวที่ช่วยดูแลการนอนของคุณ ปล่อยให้เราดูแลฝันของคุณ</p>
         </div>
         <div className="footer-links">
           <div className="footer-section">
